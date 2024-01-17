@@ -83,7 +83,7 @@ public:
         int count = 0;
         for (int i = r - 1; i <= r + 1; i++) {
         for (int j = c - 1; j <= c + 1; j++) {
-            if ((i != r || j != c) && i < 15 && i >= 0 && j < 15 && j >= 0) {
+            if ((i != r || j != c) && i < this->size && i >= 0 && j < this->size && j >= 0) {
             if (grid[i][j].state) {
                 count = count + 1;
             }
@@ -149,7 +149,7 @@ void runGame(int allowedGens, Grid mainGrid) {
 
 int main() {
     //create and init grid
-    int sizeGrid = 15;
+    int sizeGrid = 24;
     Grid mainGrid;
     mainGrid.initGrid(sizeGrid);
     mainGrid.printGrid();
@@ -164,10 +164,10 @@ int main() {
             std::cout << "coords: ";
             std::cin >> n >> m;
             //check if start of sim or incorrect coord
-            if (n > 15 || n < 1) {
+            if (n > sizeGrid || n < 1) {
                 throw n;
             }
-            if (m > 15 || m < 1) {
+            if (m > sizeGrid || m < 1) {
                 throw m;
             }
             //change cell and print grid
