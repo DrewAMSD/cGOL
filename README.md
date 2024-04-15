@@ -7,4 +7,4 @@
 4. Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
 
 ## Note
-- Project has a terminal and GUI version (GUI is the main version)
+- Project has a terminal and GUI version
