@@ -68,12 +68,12 @@ public class Model implements MessageHandler {
                 nextGen[row][col] = this.grid[row][col];
                 int count = countNeighbors(row, col);
                 if (grid[row][col]) {
-                    //cell is alive and doesn't have num of neighbors to survive
+                    //cell is alive and dies by overpopultion or underpopulation
                     if (count != 2 && count != 3) {
                         nextGen[row][col] = false;
                     }
                 } else {
-                    //cell is dead and has 3 neighbors to become alive
+                    //cell is dead and has 3 neighbors, becoming alive as if reproduction
                     if (count == 3) {
                         nextGen[row][col] = true;
                     }
